@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntax ERP - Yönetim Paneli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen">
+
+    <!-- Üst Menü (Navbar) -->
+    <nav class="bg-slate-900 text-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <span class="font-bold text-xl tracking-wider">SYNTAX ERP</span>
+                <div class="space-x-4">
+                    <button onclick="sekmeDegistir('teklif')" id="btn-teklif" class="px-4 py-2 rounded-md bg-blue-600 font-semibold transition">Teklif Oluştur</button>
+                    <button onclick="sekmeDegistir('stok')" id="btn-stok" class="px-4 py-2 rounded-md hover:bg-slate-700 font-semibold transition">Stok Yönetimi</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto p-6 mt-4">
+        
+        <!-- 1. SEKME: TEKLİF OLUŞTURMA EKRANI (Bildiğimiz ekran) -->
+        <div id="sekme-teklif" class="bg-white p-8 rounded-xl shadow-xl w-full max-w-3xl mx-auto block">
+            <h1 class="text-3xl font-extrabold text-slate-800 mb-6 border-b pb-4">Akıllı Teklif Motoru</h1>
+            
+            <div class="mb-6">
+                <label class="block text-slate-700 font-bold mb-2">Müşteri Şartnamesi:</label>
+                <textarea id="siparisMetni" rows="4" class="w-full p-4 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50" placeholder="Örn: 20 adet Çelik Levha lazım..."></textarea>
+            </div>
+
+            <button onclick="teklifAl()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-md transition duration-200">
+                Endüstriyel Maliyet Tablosunu Çıkar
+            </button>
+
+            <div id="sonucAlani" class="mt-8 hidden">
+                <div id="detaylar" class="bg-slate-50 p-4 rounded-t-lg border-x border-t border-slate-200"></div>
+                <div class="bg-slate-100 p-4 border border-slate-200 text-sm text-slate-600 space-y-2">
+                    <p class="flex justify-between"><span>Saf Malzeme:</span> <span id="safMalzeme" class="font-bold text-slate-800"></span></p>
+                    <p class="flex justify-between"><span>İşçilik & Amortisman (%15):</span> <span id="iscilik" class="font-bold text-slate-800"></span></p>
+                    <p class="flex justify-between text-blue-600"><span>Kâr Payı (%20):</span> <span id="kar" class="font-bold"></span></p>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-b-lg text-right text-3xl font-black text-green-400">
+                    TOPLAM: <span id="genelToplam">0</span> ₺
+                </div>
+                <button id="pdfButonu" onclick="pdfIndir()" class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-4 rounded-lg shadow-md transition duration-200">
+                    Resmi PDF Teklifini İndir
+                </button>
+            </div>
+        </div>
+
+        <!-- 2. SEKME: STOK VE FİYAT YÖNETİMİ -->
+        <div id="sekme-stok" class="bg-white p-8 rounded-xl shadow-xl w-full max-w-4xl mx-auto hidden">
+            <h1 class="text-3xl font-extrabold text-slate-800 mb-6 border-b pb-4">Stok ve Fiyat Veritabanı</h1>
+            
+            <!-- Yeni Malzeme Ekleme Formu -->
+            <div class="flex gap-4 mb-8 bg-slate-50 p-4 rounded-lg border border-slate-200 items-end">
+                <div class="flex-1">
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Malzeme Adı</label>
+                    <input type="text" id="yeniMalzemeAdi" placeholder="Örn: Titanyum Vida" class="w-full p-2 border rounded-md">
+                </div>
+                <div class="w-32">
+                    <label class="block text-sm font-bold text-slate-700 mb-1">Birim Fiyat (₺)</label>
+                    <input type="number" id="yeniMalzemeFiyat" placeholder="0.00" class="w-full p-2 border rounded-md">
+                </div>
+                <button onclick="malzemeEkle()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-md h-[42px]">
+                    Veritabanına Ekle
+                </button>
+            </div>
+
+            <!-- Malzeme Tablosu -->
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-slate-800 text-white">
+                        <th class="p-3 rounded-tl-lg">ID</th>
+                        <th class="p-3">Malzeme Adı</th>
+                        <th class="p-3">Güncel Fiyat</th>
+                        <th class="p-3 text-right rounded-tr-lg">İşlem</th>
+                    </tr>
+                </thead>
+                <tbody id="stokTablosu">
+                    <!-- Veriler buraya JS ile gelecek -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        let sonTeklifVerisi = null;
+
+        // Sekme Değiştirme Mantığı
+        function sekmeDegistir(sekme) {
+            document.getElementById('sekme-teklif').classList.toggle('hidden', sekme !== 'teklif');
+            document.getElementById('sekme-stok').classList.toggle('hidden', sekme !== 'stok');
+            
+            document.getElementById('btn-teklif').className = sekme === 'teklif' ? "px-4 py-2 rounded-md bg-blue-600 font-semibold transition" : "px-4 py-2 rounded-md hover:bg-slate-700 font-semibold transition";
+            document.getElementById('btn-stok').className = sekme === 'stok' ? "px-4 py-2 rounded-md bg-blue-600 font-semibold transition" : "px-4 py-2 rounded-md hover:bg-slate-700 font-semibold transition";
+
+            if(sekme === 'stok') stoklariGetir();
+        }
+
+        // --- STOK YÖNETİMİ FONKSİYONLARI ---
+        async function stoklariGetir() {
+            const response = await fetch('http://127.0.0.1:8000/hammadde/');
+            const veriler = await response.json();
+            const tablo = document.getElementById('stokTablosu');
+            tablo.innerHTML = "";
+            
+            veriler.forEach(item => {
+                tablo.innerHTML += `
+                    <tr class="border-b hover:bg-slate-50">
+                        <td class="p-3 text-slate-500">#${item.id}</td>
+                        <td class="p-3 font-semibold text-slate-800">${item.isim}</td>
+                        <td class="p-3 text-green-600 font-bold">${item.birim_fiyati} ₺</td>
+                        <td class="p-3 text-right">
+                            <button onclick="malzemeSil(${item.id})" class="text-red-500 hover:text-red-700 font-semibold text-sm">Sil</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        async function malzemeEkle() {
+            const isim = document.getElementById('yeniMalzemeAdi').value;
+            const fiyat = parseFloat(document.getElementById('yeniMalzemeFiyat').value);
+            
+            if(!isim || !fiyat) { alert("Lütfen isim ve fiyat girin!"); return; }
+
+            await fetch('http://127.0.0.1:8000/hammadde/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ isim: isim, birim_fiyati: fiyat })
+            });
+            
+            document.getElementById('yeniMalzemeAdi').value = "";
+            document.getElementById('yeniMalzemeFiyat').value = "";
+            stoklariGetir(); // Tabloyu yenile
+        }
+
+        async function malzemeSil(id) {
+            if(!confirm("Bu malzemeyi silmek istediğinize emin misiniz?")) return;
+            await fetch(`http://127.0.0.1:8000/hammadde/${id}`, { method: 'DELETE' });
+            stoklariGetir(); // Tabloyu yenile
+        }
+
+        // --- TEKLİF VE PDF FONKSİYONLARI (Aynı kaldı) ---
+        async function teklifAl() {
+            const metin = document.getElementById('siparisMetni').value;
+            if (!metin) { alert("Lütfen metin girin!"); return; }
+
+            const response = await fetch('http://127.0.0.1:8000/teklif-hazirla/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ metin: metin })
+            });
+
+            const data = await response.json();
+            if (data.hata) { alert(data.hata); return; }
+
+            sonTeklifVerisi = data;
+            const detaylarDiv = document.getElementById('detaylar');
+            detaylarDiv.innerHTML = "";
+            
+            data.hesaplanan_detaylar.forEach(kalem => {
+                if(kalem.uyari) detaylarDiv.innerHTML += `<p class="text-red-500 py-1">⚠️ <b>${kalem.malzeme}</b>: ${kalem.uyari}</p>`;
+                else detaylarDiv.innerHTML += `<p class="py-2 border-b border-slate-200 flex justify-between"><span><b>${kalem.adet}x</b> ${kalem.malzeme}</span> <span class="font-semibold">${kalem.toplam_tutar} ₺</span></p>`;
+            });
+
+            document.getElementById('safMalzeme').innerText = data.maliyetler.malzeme + " ₺";
+            document.getElementById('iscilik').innerText = data.maliyetler.iscilik + " ₺";
+            document.getElementById('kar').innerText = data.maliyetler.kar + " ₺";
+            document.getElementById('genelToplam').innerText = data.genel_toplam.toLocaleString('tr-TR');
+            document.getElementById('sonucAlani').classList.remove('hidden');
+        }
+
+        async function pdfIndir() {
+            const btn = document.getElementById('pdfButonu');
+            btn.innerText = "PDF Hazırlanıyor...";
+            const response = await fetch('http://127.0.0.1:8000/pdf-indir/', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(sonTeklifVerisi)
+            });
+            const url = window.URL.createObjectURL(await response.blob());
+            const a = document.createElement('a');
+            a.href = url; a.download = 'Resmi_Teklif.pdf';
+            document.body.appendChild(a); a.click(); a.remove();
+            btn.innerHTML = "Resmi PDF Teklifini İndir";
+        }
+    </script>
+</body>
+</html>
