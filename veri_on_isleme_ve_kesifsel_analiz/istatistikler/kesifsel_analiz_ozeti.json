@@ -1,0 +1,314 @@
+{
+ "satir": 1434,
+ "model": 291,
+ "kategori": 21,
+ "eksik": {
+  "kategori": 0,
+  "model": 0,
+  "ebat": 80,
+  "urun_adi": 0,
+  "fiyat": 0
+ },
+ "ebatsiz_urunler": {
+  "YASTIK": 24,
+  "BAHCE MOBILYASI": 22,
+  "AYDINLATMA": 14,
+  "AKSESUAR": 14,
+  "KOMODIN": 3,
+  "ALEZ": 1,
+  "KIRLENT": 1,
+  "UYKU SETI": 1
+ },
+ "kampanyali": 6,
+ "kampanya_orani": [
+  60
+ ],
+ "tekrar_urun_adi": 0,
+ "tekrar_kat_model_ebat": 0,
+ "sifir_negatif_fiyat": 0,
+ "ebat_turu": {
+  "en x boy": 953,
+  "yalnız genişlik": 312,
+  "kişilik sınıfı": 89,
+  "yok": 80
+ },
+ "isimde_ebat_ama_ebat_bos": [
+  "NOVERA KANEPE & YATAK 090x200"
+ ],
+ "monoton_kontrol_cifti": 708,
+ "monoton_ihlal": 0,
+ "ozdes_fiyatli_modeller": [
+  [
+   "CLIMA NATUREL BASLIK (BASLIK)",
+   "NIRVANA ZEN BASLIK (BASLIK)"
+  ],
+  [
+   "OVIEDO-S BAZA (BAZA)",
+   "PINEDA-S BAZA (BAZA)"
+  ],
+  [
+   "BAMBOO SLEEP BAZA (BAZA)",
+   "SLEEPURE BAZA (BAZA)"
+  ],
+  [
+   "BLACKSAND BAZA (BAZA)",
+   "CAPPADOCIA NATURA BAZA (BAZA)"
+  ],
+  [
+   "BORJEN (YATAK)",
+   "MAGNASAND THERAPY (YATAK)"
+  ]
+ ],
+ "aykiri": [
+  {
+   "kategori": "ALEZ",
+   "urun": "PROFERA KAPITONELI YASTIK ALEZI (1 CIFT)",
+   "fiyat": 629.62,
+   "yon": "alt"
+  },
+  {
+   "kategori": "ALEZ",
+   "urun": "YASTIK ALEZ (KAPITONELI) 50x70",
+   "fiyat": 339.58,
+   "yon": "alt"
+  },
+  {
+   "kategori": "ALEZ",
+   "urun": "YASTIK ALEZ (SIVI GECIRMEZ) 50x70",
+   "fiyat": 401.19,
+   "yon": "alt"
+  },
+  {
+   "kategori": "AYDINLATMA",
+   "urun": "COLONAS ABAJUR",
+   "fiyat": 3140.0,
+   "yon": "alt"
+  },
+  {
+   "kategori": "BATTANIYE",
+   "urun": "BATTANIYE TKM NAKISLI-2 (200x220) (CINAR-GUL-ZEYTIN)",
+   "fiyat": 3215.51,
+   "yon": "üst"
+  },
+  {
+   "kategori": "YASTIK",
+   "urun": "YASTIK (MORBIDO)",
+   "fiyat": 403.54,
+   "yon": "alt"
+  },
+  {
+   "kategori": "YATAK",
+   "urun": "FORNEA YATAK 90x190",
+   "fiyat": 5727.68,
+   "yon": "alt"
+  },
+  {
+   "kategori": "YATAK",
+   "urun": "LATEX MASTER YATAK 200x200",
+   "fiyat": 49733.41,
+   "yon": "üst"
+  },
+  {
+   "kategori": "YORGAN",
+   "urun": "UYKU SETI 4 MEVSIM KILIS CK",
+   "fiyat": 9392.25,
+   "yon": "üst"
+  }
+ ],
+ "onehot_sutun": 21,
+ "ozellik_dolu": {
+  "en_cm": 1265,
+  "boy_cm": 953,
+  "alan_m2": 953,
+  "kisilik_sinifi": 1354
+ },
+ "kategori_ozet": [
+  {
+   "kategori": "BASLIK",
+   "satir": 312,
+   "model": 28,
+   "min": 4098.85,
+   "medyan": 10206.6,
+   "max": 26924.99
+  },
+  {
+   "kategori": "SET",
+   "satir": 305,
+   "model": 35,
+   "min": 20319.03,
+   "medyan": 47799.35,
+   "max": 110026.49
+  },
+  {
+   "kategori": "BAZA",
+   "satir": 277,
+   "model": 32,
+   "min": 10492.5,
+   "medyan": 18913.11,
+   "max": 41626.5
+  },
+  {
+   "kategori": "YATAK",
+   "satir": 249,
+   "model": 29,
+   "min": 5727.68,
+   "medyan": 17168.61,
+   "max": 49733.41
+  },
+  {
+   "kategori": "NEVRESIM",
+   "satir": 44,
+   "model": 24,
+   "min": 1291.61,
+   "medyan": 2096.5,
+   "max": 5319.11
+  },
+  {
+   "kategori": "ALEZ",
+   "satir": 41,
+   "model": 10,
+   "min": 339.58,
+   "medyan": 1402.14,
+   "max": 2513.9
+  },
+  {
+   "kategori": "YORGAN",
+   "satir": 29,
+   "model": 13,
+   "min": 1301.67,
+   "medyan": 3015.47,
+   "max": 9392.25
+  },
+  {
+   "kategori": "YASTIK",
+   "satir": 24,
+   "model": 24,
+   "min": 403.54,
+   "medyan": 1949.62,
+   "max": 2971.23
+  },
+  {
+   "kategori": "BAHCE MOBILYASI",
+   "satir": 22,
+   "model": 22,
+   "min": 7779.22,
+   "medyan": 19207.65,
+   "max": 69904.41
+  },
+  {
+   "kategori": "BATTANIYE",
+   "satir": 20,
+   "model": 13,
+   "min": 566.6,
+   "medyan": 1089.95,
+   "max": 3215.51
+  },
+  {
+   "kategori": "YATAK PEDI",
+   "satir": 18,
+   "model": 2,
+   "min": 6441.23,
+   "medyan": 10271.39,
+   "max": 14174.06
+  },
+  {
+   "kategori": "BEBEK YATAGI",
+   "satir": 16,
+   "model": 4,
+   "min": 4609.31,
+   "medyan": 5789.08,
+   "max": 7274.86
+  },
+  {
+   "kategori": "AKSESUAR",
+   "satir": 14,
+   "model": 14,
+   "min": 3638.25,
+   "medyan": 11315.22,
+   "max": 44632.69
+  },
+  {
+   "kategori": "AYDINLATMA",
+   "satir": 14,
+   "model": 14,
+   "min": 3140.0,
+   "medyan": 6745.0,
+   "max": 10190.0
+  },
+  {
+   "kategori": "CARSAF",
+   "satir": 14,
+   "model": 3,
+   "min": 303.86,
+   "medyan": 1067.06,
+   "max": 1522.4
+  },
+  {
+   "kategori": "PIKE",
+   "satir": 11,
+   "model": 7,
+   "min": 599.0,
+   "medyan": 924.95,
+   "max": 2719.26
+  },
+  {
+   "kategori": "UYKU SETI",
+   "satir": 11,
+   "model": 6,
+   "min": 2641.71,
+   "medyan": 4095.14,
+   "max": 7932.49
+  },
+  {
+   "kategori": "YATAK ORTUSU",
+   "satir": 6,
+   "model": 4,
+   "min": 1998.19,
+   "medyan": 2471.64,
+   "max": 4102.1
+  },
+  {
+   "kategori": "KOMODIN",
+   "satir": 3,
+   "model": 3,
+   "min": 9961.88,
+   "medyan": 19480.44,
+   "max": 19720.38
+  },
+  {
+   "kategori": "YASTIK KILIFI",
+   "satir": 3,
+   "model": 3,
+   "min": 374.72,
+   "medyan": 452.7,
+   "max": 474.27
+  },
+  {
+   "kategori": "KIRLENT",
+   "satir": 1,
+   "model": 1,
+   "min": 271.67,
+   "medyan": 271.67,
+   "max": 271.67
+  }
+ ],
+ "yatak_alan_fiyat_r": 0.655,
+ "yatak_model_ici_r2_medyan": 0.976,
+ "yatak_model_ici_r2_min": 0.959,
+ "yatak_model_sayisi_uyum": 28,
+ "yatak_160_90_oran": {
+  "medyan": 1.432,
+  "min": 1.382,
+  "max": 1.514,
+  "n": 23,
+  "alan_orani": 1.778
+ },
+ "set_bilesen": {
+  "n": 239,
+  "model": 26,
+  "medyan_oran": 1.0,
+  "min": 0.984,
+  "max": 1.008,
+  "ust_bilesen_toplami_fazla": 39
+ }
+}
