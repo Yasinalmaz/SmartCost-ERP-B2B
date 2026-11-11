@@ -1,0 +1,593 @@
+{
+ "sonuc": {
+  "train": {
+   "cumle": 600,
+   "kalem": 1301,
+   "kesinlik": 99.2,
+   "duyarlilik": 99.2,
+   "f1": 99.2,
+   "tam_eslesme": 98.2,
+   "urun_tespit": 99.2
+  },
+  "val": {
+   "cumle": 200,
+   "kalem": 416,
+   "kesinlik": 99.8,
+   "duyarlilik": 97.4,
+   "f1": 98.5,
+   "tam_eslesme": 94.5,
+   "urun_tespit": 97.6
+  },
+  "test": {
+   "cumle": 200,
+   "kalem": 420,
+   "kesinlik": 85.7,
+   "duyarlilik": 84.3,
+   "f1": 85.0,
+   "tam_eslesme": 72.0,
+   "urun_tespit": 86.2
+  },
+  "test_temiz": {
+   "cumle": 160,
+   "kalem": 333,
+   "kesinlik": 90.2,
+   "duyarlilik": 91.0,
+   "f1": 90.6,
+   "tam_eslesme": 81.2,
+   "urun_tespit": 93.1
+  },
+  "test_gurultulu": {
+   "cumle": 40,
+   "kalem": 87,
+   "kesinlik": 66.2,
+   "duyarlilik": 58.6,
+   "f1": 62.2,
+   "tam_eslesme": 35.0,
+   "urun_tespit": 59.8
+  }
+ },
+ "hatalar": {
+  "val": {
+   "adet_yanlis": 1,
+   "bulunamadi": 9,
+   "benzer_urun": 1
+  },
+  "test": {
+   "benzer_urun": 32,
+   "ebat_yanlis": 17,
+   "bulunamadi": 11,
+   "adet_yanlis": 6
+  }
+ },
+ "sure_ms": {
+  "ortalama": 0.53,
+  "medyan": 0.51,
+  "p95": 1.06,
+  "max": 1.87
+ },
+ "ornek_hatalar": {
+  "val": [
+   {
+    "metin": "Otelimiz için 8 borjen başlık 110 cm ve nevresim tkm ranforce-3 lumi sawon-sunlight-trosia tek kişilik ve 12 Adet Orlino Salıncak için teklif bekliyoruz.",
+    "beklenen": "NEVRESIM TKM (RANFORCE-3) TK (LUMI) SAWON-SUNLIGHT-TROSIA",
+    "adet": 1,
+    "bulunan": [
+     "BORJEN BASLIK 110 CM",
+     "NEVRESIM TKM (RANFORCE-3) TK (LUMI) SAWON-SUNLIGHT-TROSIA",
+     "ORLINO SALINCAK"
+    ],
+    "tur": "adet_yanlis"
+   },
+   {
+    "metin": "10 Novera Kanepe & Yatak 090X200, 5 adet viscofresh exclusive baza 90x200 lazım.",
+    "beklenen": "NOVERA KANEPE & YATAK 090x200",
+    "adet": 10,
+    "bulunan": [
+     "VISCOFRESH EXCLUSIVE BAZA 90x200"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "Otelimiz için 3 tane novera kanepe & yatak 090x200; 6 adet elarin doğal uyku paketi çk lazım.",
+    "beklenen": "NOVERA KANEPE & YATAK 090x200",
+    "adet": 3,
+    "bulunan": [
+     "ELARIN DOGAL UYKU PAKETI CK"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "20 tane novera kanepe & yatak 090x200, 30 adet tv koltuğu magnus acil lazım",
+    "beklenen": "NOVERA KANEPE & YATAK 090x200",
+    "adet": 20,
+    "bulunan": [
+     "TV KOLTUGU (MAGNUS)"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "İyi günler, 2 Adet Magnasand Therapy Havuzlu Set Takım 200X200, 6 adet novera kanepe & yatak 090x200 ve 12 borjen havuzlu set 120X200 lazım.",
+    "beklenen": "NOVERA KANEPE & YATAK 090x200",
+    "adet": 6,
+    "bulunan": [
+     "MAGNASAND THERAPY HVZ SET 200x200",
+     "BORJEN HVZ SET 120x200"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "8 Adet Nirvana Zen Başlık 190 Cm; 5 orlino salıncak, 25 adet novera kanepe & yatak 090x200 acil lazım",
+    "beklenen": "NOVERA KANEPE & YATAK 090x200",
+    "adet": 25,
+    "bulunan": [
+     "NIRVANA ZEN BASLIK 190 CM",
+     "ORLINO SALINCAK"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "Merhaba, 3 tane novera kanepe & yatak 090x200, JUNIOR BEBEK YATAĞI 60X120 3 ADET rica ederiz.",
+    "beklenen": "NOVERA KANEPE & YATAK 090x200",
+    "adet": 3,
+    "bulunan": [
+     "JUNIOR BEBEK YATAGI 60x120"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "Merhaba, 40 Golden Prime Baza Çift Parca 120X200 ve novera kanepe & yatak 090x200 40 adet; 25 Tane Lujan Abajur rica ederiz.",
+    "beklenen": "NOVERA KANEPE & YATAK 090x200",
+    "adet": 40,
+    "bulunan": [
+     "GOLDEN PRIME-S BAZA CIFT PARCA 120x200",
+     "LUJAN ABAJUR"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "İyi günler, 25 Pmk Fitted Penye Çarşaf Tkm 120 X 200; 15 yastık airsmart; 1 Tane Novera Kanepe & Yatak 090X200",
+    "beklenen": "NOVERA KANEPE & YATAK 090x200",
+    "adet": 1,
+    "bulunan": [
+     "PMK FITTED PENYE CARSAF TKM (120x200)",
+     "YASTIK (AIRSMART)"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "Merhaba, 10 adet novera kanepe & yatak 090x200, 10 tane junior bebek yatağı 60x120 ve 40 tane greges abajur ve comfort balance baza 150X200 8 adet için teklif bekliyoruz.",
+    "beklenen": "NOVERA KANEPE & YATAK 090x200",
+    "adet": 10,
+    "bulunan": [
+     "JUNIOR BEBEK YATAGI 60x120",
+     "GREGES ABAJUR",
+     "COMFORT BALANCE-S BAZA 150x200"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "İyi günler, 1 NOVERA KANEPE & YATAK 090X200 ve 4 Golden Prime Baza Çift Parca 120X200 ve 3 adet multi smart komodin sag/sol için teklif bekliyoruz.",
+    "beklenen": "NOVERA KANEPE & YATAK 090x200",
+    "adet": 1,
+    "bulunan": [
+     "GOLDEN PRIME-S BAZA CIFT PARCA 120x200",
+     "MULTI SMART KOMODIN SAG/SOL"
+    ],
+    "tur": "bulunamadi"
+   }
+  ],
+  "test": [
+   {
+    "metin": "İyi günler, BAHAMA RATTAN MINI SET 30 ADET",
+    "beklenen": "BAHAMA RATTAN MINI SET",
+    "adet": 30,
+    "bulunan": [
+     "BAHAMA RATTAN SET"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "Otelimiz için Cappaocia Natura Set Takım 200X200 Cm X25\nfreh cell prime baza 140 X 200 ölçüsünde 4 adet ile crio puf 2 adet lazım.",
+    "beklenen": "CARIO PUF",
+    "adet": 2,
+    "bulunan": [
+     "CAPPADOCIA NATURA SET 200x200",
+     "FRESH CELL PRIME BAZA 140x200",
+     "LILY PUF"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "İyi günler, nirvana zen yatak 140 X 190 x30 lazım.",
+    "beklenen": "NIRVANA ZEN YATAK 140x190",
+    "adet": 30,
+    "bulunan": [
+     "NIRVANA ZEN YATAK 90x190"
+    ],
+    "tur": "ebat_yanlis"
+   },
+   {
+    "metin": "Kpali Baza 120 X 200 X25 için teklif bekliyoruz.",
+    "beklenen": "KAPALI BAZA 120x200",
+    "adet": 25,
+    "bulunan": [],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "Climextra Baza 140 X 200 X20, battaniye pamuklu gronda 200 X 220 x4 bir de YATAK ÖRTÜSÜ SETI VIVORA ÇIFT KIŞILIK ÖLÇÜSÜNDE 4 ADET lazım.",
+    "beklenen": "CLIMEXTRA BAZA 140x200",
+    "adet": 20,
+    "bulunan": [
+     "CLIMEXTRA BAZA 90x190",
+     "BATTANIYE PAMUKLU GRONDA (200x220)",
+     "YATAK ORTUSU SETI VIVORA CK"
+    ],
+    "tur": "ebat_yanlis"
+   },
+   {
+    "metin": "Climextra Baza 140 X 200 X20, battaniye pamuklu gronda 200 X 220 x4 bir de YATAK ÖRTÜSÜ SETI VIVORA ÇIFT KIŞILIK ÖLÇÜSÜNDE 4 ADET lazım.",
+    "beklenen": "BATTANIYE PAMUKLU GRONDA (200x220)",
+    "adet": 4,
+    "bulunan": [
+     "CLIMEXTRA BAZA 90x190",
+     "BATTANIYE PAMUKLU GRONDA (200x220)",
+     "YATAK ORTUSU SETI VIVORA CK"
+    ],
+    "tur": "adet_yanlis"
+   },
+   {
+    "metin": "Otelimiz için nirvana zen baza 90*200 x8\nyastık cappadocia natura 2 adet için teklif bekliyoruz.",
+    "beklenen": "NIRVANA ZEN BAZA 90x200",
+    "adet": 8,
+    "bulunan": [
+     "NIRVANA ZEN BAZA 90x190",
+     "YASTIK (CAPPADOCIA NATURA)"
+    ],
+    "tur": "ebat_yanlis"
+   },
+   {
+    "metin": "4 ad. yastık morbio için teklif bekliyoruz.",
+    "beklenen": "YASTIK (MORBIDO)",
+    "adet": 4,
+    "bulunan": [
+     "YASTIK (AIRSMART)"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "İyi günler, goldn yatak 90 X 190 ölçüsünde 10 adet\nyorgn pamuk battal x5 ile BHAMA RATTAN MINI SET 3 ADET acil lazım",
+    "beklenen": "GOLDEN YATAK 90x190",
+    "adet": 10,
+    "bulunan": [
+     "YORGAN (PAMUK) BATTAL",
+     "BAHAMA RATTAN SET"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "İyi günler, goldn yatak 90 X 190 ölçüsünde 10 adet\nyorgn pamuk battal x5 ile BHAMA RATTAN MINI SET 3 ADET acil lazım",
+    "beklenen": "BAHAMA RATTAN MINI SET",
+    "adet": 3,
+    "bulunan": [
+     "YORGAN (PAMUK) BATTAL",
+     "BAHAMA RATTAN SET"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "battaniye pamuklu 200 X 220 x30 bir de 5 AD. YASTIK DOVIS acil lazım",
+    "beklenen": "BATTANIYE PAMUKLU (200x220)",
+    "adet": 30,
+    "bulunan": [
+     "BATTANIYE PAMUKLU (150x200)",
+     "YASTIK (DOVIS)"
+    ],
+    "tur": "ebat_yanlis"
+   },
+   {
+    "metin": "40 ad. yastık anti strs\n150 X 200 Sleepre Baza 20 Tane, yasık dovis 6 adet acil lazım",
+    "beklenen": "SLEEPURE BAZA 150x200",
+    "adet": 20,
+    "bulunan": [
+     "YASTIK (ANTI STRES)",
+     "YASTIK (DOVIS)"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "Merhaba, thermo control beyaz/antrasit baza 90*190 x40 acil lazım",
+    "beklenen": "THERMO CONTROL BEYAZ/ANTRASIT BAZA 90x190",
+    "adet": 40,
+    "bulunan": [
+     "THERMO CONTROL BEYAZ/ANTRASIT BAZA 90x190"
+    ],
+    "tur": "adet_yanlis"
+   },
+   {
+    "metin": "15 ad. caio puf ile PANERA RATTAN KOLTUK IKLI X10 ile YORGAN KAOK ÇIFT KIŞILIK X20",
+    "beklenen": "CARIO PUF",
+    "adet": 15,
+    "bulunan": [
+     "LILY PUF",
+     "PANERA RATTAN KOLTUK UCLU",
+     "YORGAN (BAMBU) CK"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "15 ad. caio puf ile PANERA RATTAN KOLTUK IKLI X10 ile YORGAN KAOK ÇIFT KIŞILIK X20",
+    "beklenen": "PANERA RATTAN KOLTUK IKILI",
+    "adet": 10,
+    "bulunan": [
+     "LILY PUF",
+     "PANERA RATTAN KOLTUK UCLU",
+     "YORGAN (BAMBU) CK"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "15 ad. caio puf ile PANERA RATTAN KOLTUK IKLI X10 ile YORGAN KAOK ÇIFT KIŞILIK X20",
+    "beklenen": "YORGAN (KAPOK) CK",
+    "adet": 20,
+    "bulunan": [
+     "LILY PUF",
+     "PANERA RATTAN KOLTUK UCLU",
+     "YORGAN (BAMBU) CK"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "İyi günler, Yastık Cappadocia Natura 1 Adet\nLoren Josephin X30 bir de THERMO CONTROL BEYAZ/ANTRASIT BAZA 150*200 X1 rica ederiz.",
+    "beklenen": "THERMO CONTROL BEYAZ/ANTRASIT BAZA 150x200",
+    "adet": 1,
+    "bulunan": [
+     "YASTIK (CAPPADOCIA NATURA)",
+     "LOREN JOSEPHIN",
+     "THERMO CONTROL BEYAZ/ANTRASIT BAZA 90x190"
+    ],
+    "tur": "ebat_yanlis"
+   },
+   {
+    "metin": "İyi günler, clima naturel prime hvz set takım 90 X 190 x5 ile minoa rattan koltuk uclu x5\n180*200 biosalt baza 20 tane acil lazım",
+    "beklenen": "CLIMA NATUREL PRIME HVZ SET 90x190",
+    "adet": 5,
+    "bulunan": [
+     "CLIMA NATUREL PRIME HVZ SET 90x190",
+     "MINOA RATTAN KOLTUK UCLU",
+     "BIOSALT BAZA 180x200"
+    ],
+    "tur": "adet_yanlis"
+   },
+   {
+    "metin": "Merhaba, Kapali Baza 180*200 X30 lazım.",
+    "beklenen": "KAPALI BAZA 180x200",
+    "adet": 30,
+    "bulunan": [
+     "KAPALI BAZA 90x190"
+    ],
+    "tur": "ebat_yanlis"
+   },
+   {
+    "metin": "bahama rattan mini set, panera rattan koltuk ikili x25\n2 ad. golden yatak 180*200, nirvana zen yatak 90*190 x8",
+    "beklenen": "BAHAMA RATTAN MINI SET",
+    "adet": 1,
+    "bulunan": [
+     "BAHAMA RATTAN SET",
+     "PANERA RATTAN KOLTUK IKILI",
+     "GOLDEN YATAK 180x200",
+     "NIRVANA ZEN YATAK 90x190"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "bahama rattan mini set, panera rattan koltuk ikili x25\n2 ad. golden yatak 180*200, nirvana zen yatak 90*190 x8",
+    "beklenen": "NIRVANA ZEN YATAK 90x190",
+    "adet": 8,
+    "bulunan": [
+     "BAHAMA RATTAN SET",
+     "PANERA RATTAN KOLTUK IKILI",
+     "GOLDEN YATAK 180x200",
+     "NIRVANA ZEN YATAK 90x190"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "Otelimiz için 160x200 cm clma naturel baza 2 tane için teklif bekliyoruz.",
+    "beklenen": "CLIMA NATUREL BAZA 160x200",
+    "adet": 2,
+    "bulunan": [
+     "KAPOK NATUREL BAZA 160x200"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "Battaniye Pamuklu Gronda 200*220 X4, Therm-All Baza 180X200 Cm X6, 10 Ad. Yorgan Bambu Battal acil lazım",
+    "beklenen": "BATTANIYE PAMUKLU GRONDA (200x220)",
+    "adet": 4,
+    "bulunan": [
+     "BATTANIYE PAMUKLU GRONDA (200x220)",
+     "THERM-ALL BAZA 180x200",
+     "YORGAN (BAMBU) BATTAL"
+    ],
+    "tur": "adet_yanlis"
+   },
+   {
+    "metin": "Otelimiz için çk nevresim seti ranforce rvella 12 tane\n90*200 Clima Naurel Baza 3 Tane ile nevesim tkm espiga çift kişilik x1, 3 ad. yastk anti stres",
+    "beklenen": "NEVRESIM SETI (RANFORCE) RAVELLA CK",
+    "adet": 12,
+    "bulunan": [
+     "NEVRESIM SETI (RANFORCE) ADISA CK",
+     "CLIMA NATUREL BAZA 90x200",
+     "NEVRESIM TKM (ESPIGA) CK",
+     "YASTIK (ANTI STRES)"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "Firmamız adına 40 ad. sleepure baza 90*190 bir de 200*200 Bohemela Set 6 Tane\nClima Naturel Prime Hvz Set Takım 90X200 Cm X6 ile Kapali Baza 90*190 X12 için teklif bekliyoruz.",
+    "beklenen": "KAPALI BAZA 90x190",
+    "adet": 12,
+    "bulunan": [
+     "SLEEPURE BAZA 90x190",
+     "BOHEMELA SET 200x200",
+     "CLIMA NATUREL PRIME HVZ SET 90x200",
+     "KAPALI BAZA 90x190"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "crio puf 6 adet, golen yatak 160*200 ölçüsünde 40 adet lazım.",
+    "beklenen": "CARIO PUF",
+    "adet": 6,
+    "bulunan": [
+     "LILY PUF"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "crio puf 6 adet, golen yatak 160*200 ölçüsünde 40 adet lazım.",
+    "beklenen": "GOLDEN YATAK 160x200",
+    "adet": 40,
+    "bulunan": [
+     "LILY PUF"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "Merhaba, 30 ad. cliextra baza 140 X 190 ile 4 ad. panera ratan koltuk ikili ile 12 AD. CIMA NATUREL PRIME HVZ SET 140 X 200 rica ederiz.",
+    "beklenen": "CLIMEXTRA BAZA 140x190",
+    "adet": 30,
+    "bulunan": [
+     "PANERA RATTAN KOLTUK IKILI",
+     "CLIMA NATUREL PRIME HVZ SET 140x200"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "15 ad. nevresim seti pamuk tencel straight çift kişilik, bahama rattan mini set x25 için teklif bekliyoruz.",
+    "beklenen": "BAHAMA RATTAN MINI SET",
+    "adet": 25,
+    "bulunan": [
+     "NEVRESIM SETI (PAMUK TENCEL) STRAIGHT CK",
+     "BAHAMA RATTAN SET"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "İyi günler, 160 X 200 Fresh Cell Prme Set 5 Tane, 2 ad. yatık kapok\n1 ad. yastık bojen acil lazım",
+    "beklenen": "YASTIK (KAPOK)",
+    "adet": 2,
+    "bulunan": [
+     "FRESH CELL PRIME SET 160x200",
+     "KAPOK NATUREL BASLIK 90 CM",
+     "YASTIK (AIRSMART)"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "İyi günler, 160 X 200 Fresh Cell Prme Set 5 Tane, 2 ad. yatık kapok\n1 ad. yastık bojen acil lazım",
+    "beklenen": "YASTIK (BORJEN)",
+    "adet": 1,
+    "bulunan": [
+     "FRESH CELL PRIME SET 160x200",
+     "KAPOK NATUREL BASLIK 90 CM",
+     "YASTIK (AIRSMART)"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "Otelimiz için CAPPADOCIA NATURA YATAK 120*200 ÖLÇÜSÜNDE 1 ADET, PINEDA YATAK 140*200 X12 acil lazım",
+    "beklenen": "PINEDA YATAK 140x200",
+    "adet": 12,
+    "bulunan": [
+     "CAPPADOCIA NATURA YATAK 120x200",
+     "PINEDA YATAK 90x190"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "katlanir yatak ve somya 90 X 200 x40 lazım.",
+    "beklenen": "KATLANIR YATAK VE SOMYA YATAK 90x200",
+    "adet": 40,
+    "bulunan": [
+     "KATLANIR YATAK VE SOMYA YATAK 90x200",
+     "KATLANIR YATAK VE SOMYA YATAK 90x200"
+    ],
+    "tur": "adet_yanlis"
+   },
+   {
+    "metin": "İyi günler, 40 Ad. Nirana Zen Yatak 100 X 200\nPanera Rattan Koltuk Ikli 4 Adet bir de 120 X 200 yün alez 4 tane acil lazım",
+    "beklenen": "PANERA RATTAN KOLTUK IKILI",
+    "adet": 4,
+    "bulunan": [
+     "NIRVANA ZEN YATAK 100x200",
+     "PANERA RATTAN KOLTUK UCLU",
+     "YUN ALEZ (120x200)"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "Firmamız adına 120X200 CM YÜN ALEZ 2 TANE, serenity baza 150*200 x2 için teklif bekliyoruz.",
+    "beklenen": "SERENITY BAZA 150x200",
+    "adet": 2,
+    "bulunan": [
+     "YUN ALEZ (120x200)",
+     "SERENITY BAZA 90x190"
+    ],
+    "tur": "ebat_yanlis"
+   },
+   {
+    "metin": "Firmamız adına bahama rattan mini set 12 adet rica ederiz.",
+    "beklenen": "BAHAMA RATTAN MINI SET",
+    "adet": 12,
+    "bulunan": [
+     "BAHAMA RATTAN SET"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "Otelimiz için nevresim seti ranfrce ravella tek kişilik, 24 AD. YATAK ÖRTÜSÜ SETI VIVOA ÇIFT KIŞILIK, 140 X 190 kpali baza 10 tane\nuyku seti mogy soft battal acil lazım",
+    "beklenen": "YATAK ORTUSU SETI VIVORA CK",
+    "adet": 24,
+    "bulunan": [
+     "NEVRESIM SETI (RANFORCE) RAVELLA TK",
+     "YATAK ORTUSU SETI TIVANA CK",
+     "UYKU SETI MOGY SOFT BT"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "Otelimiz için nevresim seti ranfrce ravella tek kişilik, 24 AD. YATAK ÖRTÜSÜ SETI VIVOA ÇIFT KIŞILIK, 140 X 190 kpali baza 10 tane\nuyku seti mogy soft battal acil lazım",
+    "beklenen": "KAPALI BAZA 140x190",
+    "adet": 10,
+    "bulunan": [
+     "NEVRESIM SETI (RANFORCE) RAVELLA TK",
+     "YATAK ORTUSU SETI TIVANA CK",
+     "UYKU SETI MOGY SOFT BT"
+    ],
+    "tur": "bulunamadi"
+   },
+   {
+    "metin": "Otelimiz için yastık maya gold 2 tane bir de 160 X 200 clima naturel prime havuzlu set takım 20 tane, Bahama Rattan Mini Set 15 Adet",
+    "beklenen": "BAHAMA RATTAN MINI SET",
+    "adet": 15,
+    "bulunan": [
+     "YASTIK (MAYA GOLD)",
+     "CLIMA NATUREL PRIME HVZ SET 160x200",
+     "BAHAMA RATTAN SET"
+    ],
+    "tur": "benzer_urun"
+   },
+   {
+    "metin": "Otelimiz için yogan pamuk çift kişilik ölçüsünde 2 adet ile clia naturel baza 200x200 cm x8",
+    "beklenen": "CLIMA NATUREL BAZA 200x200",
+    "adet": 8,
+    "bulunan": [
+     "YORGAN (PAMUK) CK",
+     "KAPOK NATUREL BAZA 200x200"
+    ],
+    "tur": "benzer_urun"
+   }
+  ]
+ }
+}
